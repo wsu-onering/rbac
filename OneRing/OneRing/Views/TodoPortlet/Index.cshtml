@@ -1,4 +1,4 @@
-﻿
+﻿@model List<OneRing.Models.ToDoItem>
 @{
     ViewBag.Title = "Index";
     Layout = "";
@@ -10,59 +10,26 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
 <body style="padding-top: 0px;">
-    <h2>Today's Todo List</h2>
+    <h2>Todo List</h2>
 
-    <ul style="padding-left: 5px;">
-        <li>
-            Copy the FRCS report for next weeks progress meeting
-        </li>
-        <li>
-            Send Q2 figures to board
-            <ul>
-                <li>
-                    Also send figures to Alice in accounting
-                </li>
-            </ul>
-        <li>
-            Revise strategy document on TTR project
-        </li>
-
-        <li>
-            Speak with Jared about inter-team efficacy
-        </li>
-        <li>
-            Write up documentation on project release procedures for ADWWP
-        </li>
-        <li>
-            Send out email with announcements on TTR progress
-        </li>
-    </ul>
-<script>
-var checkboxes = [];
-function getCheckboxStates() { return checkboxes.map(bx => !!bx.checked); };
-function saveCheckboxStates() {
-	localStorage['boxStates'] = JSON.stringify(getCheckboxStates());
-}
-// Add a checkbox in front of every list item, save reference to each
-[].slice.call(document.getElementsByTagName('li')).forEach((li, index) => {
-	var chkbx = document.createElement('input');
-	chkbx.type = "checkbox";
-	li.insertBefore(chkbx, li.firstChild);
-	chkbx.addEventListener('click', saveCheckboxStates);
-	checkboxes.push(chkbx);
-});
-// If there are no local-storage states, create them.
-if (!localStorage['boxStates']){
-	saveCheckboxStates();
-// Apply the states saved in local-storage
-} else {
-	boxStates = JSON.parse(localStorage['boxStates']);
-	checkboxes.forEach((chkbx, i) => {chkbx.checked = boxStates[i];});
-}
-</script>
-<style>
-ul { list-style-type: none; }
-</style>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Title</th>
+            <th>Complete?</th>
+            <th>Due Date</th>
+        </tr>
+        @foreach (var todo in Model) {
+            <tr>
+                <td><a href="@todo.Link">@todo.Title</a></td>
+                    @if (todo.Complete) {
+                        <td>Done</td>
+                    } else {
+                        <td>Incomplete</td>
+                    }
+                <td>@todo.DueDate</td>
+            </tr>
+        }
+    </table>
 </body>
 
 </html>
