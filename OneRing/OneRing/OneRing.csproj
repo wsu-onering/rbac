@@ -206,6 +206,7 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\portlets\TodoPortlet.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UserProfileController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
@@ -288,6 +289,7 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\GetMembers.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\TodoPortlet\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

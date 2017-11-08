@@ -8,7 +8,8 @@ namespace OneRing.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+		[Authorize]
+		public ActionResult Index()
         {
             return View();
         }

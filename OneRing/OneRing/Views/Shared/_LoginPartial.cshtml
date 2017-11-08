@@ -2,7 +2,7 @@
     <text>
         <ul class="nav navbar-nav navbar-right">
             <li class="navbar-text">
-                Hello, @User.Identity.Name!
+                Hello, @User.Identity.Name.Substring(0, Math.Min(User.Identity.Name.Length, 10))!
             </li>
             <li>
                 @Html.ActionLink("Sign out", "SignOut", "Account")
