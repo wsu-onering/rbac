@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneRing", "OneRing\OneRing.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoStaticSource", "ToDoStaticSource\ToDoStaticSource.csproj", "{A89F71F8-C3BE-4F31-8C05-B4E605744B38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTestSite", "TodoTestSite\TodoTestSite.csproj", "{364EE11C-A9C2-4095-A5FC-9B568E2DAB8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTestSite", "TodoTestSite\TodoTestSite.csproj", "{06635766-9782-4517-9F1B-6F39FB782BEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{A89F71F8-C3BE-4F31-8C05-B4E605744B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A89F71F8-C3BE-4F31-8C05-B4E605744B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A89F71F8-C3BE-4F31-8C05-B4E605744B38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{364EE11C-A9C2-4095-A5FC-9B568E2DAB8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{364EE11C-A9C2-4095-A5FC-9B568E2DAB8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{364EE11C-A9C2-4095-A5FC-9B568E2DAB8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{364EE11C-A9C2-4095-A5FC-9B568E2DAB8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06635766-9782-4517-9F1B-6F39FB782BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06635766-9782-4517-9F1B-6F39FB782BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06635766-9782-4517-9F1B-6F39FB782BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06635766-9782-4517-9F1B-6F39FB782BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
