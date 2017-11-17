@@ -11,22 +11,26 @@ namespace TodoTestSite.Models
         // Properties
         //////////////////////////////////////////////////////////////////////////////////////
         private int id;
-        public int ID {
+        public int Id
+        {
             get { return id; }
             private set { id = value; }
         }
 
         private string name;
-        public string Name {
+        public string Name
+        {
             get { return name; }
             private set { name = value; }
         }
-        
-        private IEnumerable<TodoItemModel> todoItems;
-        public IEnumerable<TodoItemModel> TodoItems {
-            get { return todoItems; }
-            private set { todoItems = value; }
+
+        private string nameConcat;
+        public string NameConcat
+        {
+            get { return nameConcat; }
+            private set { nameConcat = value; }
         }
+
 
         //////////////////////////////////////////////////////////////////////////////////////
         // Constructor

@@ -9,31 +9,66 @@ namespace TodoTestSite.Models
         //////////////////////////////////////////////////////////////////////////////////////
         // Properties
         //////////////////////////////////////////////////////////////////////////////////////
-        [DataMember]
+        private int userId;
+        public int UserId
+        {
+            get { return userId; }
+            set { userId = value; }
+        }
+
+        [DataMember(Name = "ID")]
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        [DataMember(Name = "Title")]
         private string title;
-        public string Title {
+        public string Title
+        {
             get { return title; }
-            private set { title = value; }
+            set { title = value; }
         }
 
-        [DataMember]
+        [DataMember(Name = "Link")]
         private string link;
-        public string Link {
+        public string Link
+        {
             get { return link; }
-            private set { link = value; }
+            set { link = value; }
         }
 
-        [DataMember]
+        [DataMember(Name = "DueDate")]
         private DateTime dueDate;
-        public DateTime DueDate {
+        public DateTime DueDate
+        {
             get { return dueDate; }
-            private set { dueDate = value; }
+            set { dueDate = value; }
         }
-        
+
+        private DateTime completeDate;
+        public DateTime CompleteDate
+        {
+            get { return completeDate; }
+            set { completeDate = value; }
+        }
+
+        private bool isComplete;
+        public bool IsComplete
+        {
+            get { return isComplete; }
+            set { isComplete = value; }
+        }
 
         //////////////////////////////////////////////////////////////////////////////////////
         // Constructor
         //////////////////////////////////////////////////////////////////////////////////////
+        public TodoItemModel()
+        {
+        }
+
         public TodoItemModel(string title, string link, DateTime dueDate)
         {
             this.title = title;
