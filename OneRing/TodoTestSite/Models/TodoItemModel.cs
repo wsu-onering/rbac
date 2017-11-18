@@ -9,13 +9,6 @@ namespace TodoTestSite.Models
         //////////////////////////////////////////////////////////////////////////////////////
         // Properties
         //////////////////////////////////////////////////////////////////////////////////////
-        private int userId;
-        public int UserId
-        {
-            get { return userId; }
-            set { userId = value; }
-        }
-
         [DataMember(Name = "ID")]
         private int id;
         public int Id

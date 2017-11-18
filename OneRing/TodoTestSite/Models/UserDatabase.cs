@@ -43,17 +43,22 @@ namespace TodoTestSite.Models
             sqlConnection.Close();
         }
 
-        public IEnumerable<TodoItemModel> GetTodoItems(string nameConcat)
-        {
-            int id = getUserId(nameConcat);
-            if (id == -1)
-                return null;
-            return GetTodoItems(id);
-        }
-
-        public IEnumerable<TodoItemModel> GetTodoItems(int userId)
+        /// <summary>
+        /// This method uses the guid to return all todo items specific to the 
+        /// user and that are NOT complete.
+        /// </summary>
+        /// <param name="guid">16-byte global unique identifier</param>
+        /// <returns></returns>
+        public IEnumerable<TodoItemModel> GetTodoItems(string guid)
         {
             List<TodoItemModel> todoItems = new List<TodoItemModel>();
+
+            // Get user id
+            int userId = getUserId(guid);
+
+            // If user not found
+            if (userId == -1)
+                return null;
 
             // Create sql command
             SqlCommand command = new SqlCommand("SELECT * FROM TodoTable WHERE UserId=@parameter AND IsComplete='False'", sqlConnection);
@@ -75,8 +80,21 @@ namespace TodoTestSite.Models
             return todoItems;
         }
 
-        public void CompleteTodoItem(int todoId)
+        /// <summary>
+        /// This method completes the given todo item given the user guid and
+        /// todo id. If the guid does not match any users in the database it
+        /// does nothing.
+        /// </summary>
+        /// <param name="guid">Global unique identifier of the todo item</param>
+        /// <param name="todoId">Id of the todo item to mark as complete</param>
+        public void CompleteTodoItem(string guid, int todoId)
         {
+            // Get user id
+            int userId = getUserId(guid);
+
+            // If user not found
+            if (userId == -1)
+                return;
 
             // Create sql command
             SqlCommand command = new SqlCommand("UPDATE TodoTable SET CompleteDate=@p0, IsComplete='True' WHERE Id=@p1", sqlConnection);
@@ -89,12 +107,12 @@ namespace TodoTestSite.Models
         //////////////////////////////////////////////////////////////////////////////////////
         // Private Methods
         //////////////////////////////////////////////////////////////////////////////////////
-        private int getUserId(string nameConcat)
+        private int getUserId(string guid)
         {
             int id = -1;
             // Create sql command
-            SqlCommand command = new SqlCommand("SELECT * FROM UserTable WHERE NameConcat=@parameter", sqlConnection);
-            command.Parameters.AddWithValue("parameter", nameConcat);
+            SqlCommand command = new SqlCommand("SELECT * FROM UserTable WHERE Guid=@parameter", sqlConnection);
+            command.Parameters.AddWithValue("parameter", guid);
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 // Read user id
