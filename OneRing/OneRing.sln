@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoStaticSource", "ToDoSta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTestSite", "TodoTestSite\TodoTestSite.csproj", "{06635766-9782-4517-9F1B-6F39FB782BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTestSite2", "TodoTestSite2\TodoTestSite2.csproj", "{2F2F4608-40FF-41B8-82B7-15D8B55E9905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{06635766-9782-4517-9F1B-6F39FB782BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06635766-9782-4517-9F1B-6F39FB782BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06635766-9782-4517-9F1B-6F39FB782BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F2F4608-40FF-41B8-82B7-15D8B55E9905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F2F4608-40FF-41B8-82B7-15D8B55E9905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F2F4608-40FF-41B8-82B7-15D8B55E9905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F2F4608-40FF-41B8-82B7-15D8B55E9905}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
